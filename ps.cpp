@@ -7,17 +7,27 @@ typedef pair<int, int> P;
 #define LINF 2e11
 #define MOD 1000000007
 
-int n;
-ll dp[35];
+int n, cnt;
+
+void func(int cur) {
+    if (cur == 1)return;
+    if (cur % 2) {
+        cnt += (cur / 2) * (cur / 2 + 1);
+        func(cur / 2);
+        func(cur / 2 + 1);
+    }
+    else {
+        cnt += (cur / 2) * (cur / 2);
+        func(cur / 2);
+        func(cur / 2);
+    }
+}
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL), cout.tie(NULL);
     cin >> n;
-    dp[0] = dp[1] = 1;
-    for (int i = 2; i <= n; i++)
-        for (int j = 1; j <= i; j++)
-            dp[i] += dp[i - j] * dp[j - 1];
-    cout << dp[n] << endl;
+    func(n);
+    cout << cnt << endl;
     return 0;
 }
