@@ -8,7 +8,7 @@ typedef pair<int, pair<int, int>> P;
 #define MOD 1000000007
 
 int n, m, k, ans = INF;
-int visit[11][1001][1001], wall[1001][1001];
+int visit[15][1005][1005], wall[1005][1005];
 int dy[] = { 0,0,-1,1 }, dx[] = { 1,-1,0,0 };
 string str;
 queue<P> q;
