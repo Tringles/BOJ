@@ -27,7 +27,7 @@ int main() {
         for (int cur = 1; cur <= a; cur++) {
             for (auto& o : v[cur]) {
                 int next = o.first, n_dist = o.second;
-                if (dist[cur] != INF) {
+                if (dist[cur] != LINF) {
                     if (dist[next] > dist[cur] + n_dist) {
                         dist[next] = dist[cur] + n_dist;
                         if (i == a) {
@@ -43,7 +43,7 @@ int main() {
     }
     else {
         for (int i = 2; i <= a; i++) {
-            if (dist[i] == INF) {
+            if (dist[i] == LINF) {
                 cout << -1 << endl;
             }
             else {
