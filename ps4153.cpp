@@ -10,14 +10,18 @@ typedef pair<ll, pair<ll, ll>> PLL;
 #define LINF 2e15
 #define MOD 1000000007
 
-ll n;
+int a[3];
 
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(NULL), cout.tie(NULL);
-    cin >> n;
-    if(n == 1)cout << 1 << endl;
-    else if(n % 2) cout << 0 << endl;
-    else cout << 1 << endl;
+    while(1){
+        cin >> a[0] >> a[1] >> a[2];
+        if(!a[0] && !a[1] && !a[2])break;
+        sort(a, a + 3);
+        if((a[0] * a[0] + a[1] * a[1]) == a[2] * a[2])
+            cout << "right" << endl;
+        else cout << "wrong" << endl;
+    }
     return 0;
 }
